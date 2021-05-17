@@ -40,6 +40,37 @@ for (let i = 0; i < scrollToFooter.length; i++) {
   })
 }
 
+let scrollToLibraries = document.querySelector('._toLibraries');
+let libraries = document.querySelector('._libraries');
+
+scrollToLibraries.addEventListener('click', function () {
+  libraries.scrollIntoView({block: "start", behavior: "smooth"});
+})
+
+let scrollToBookStories = document.querySelector('._toBookStories');
+let bookStories = document.querySelector('._bookStories');
+
+scrollToBookStories.addEventListener('click', function () {
+  bookStories.scrollIntoView({block: "start", behavior: "smooth"});
+})
+
+let scrollToEducationalEstablishments = document.querySelector('._toEducationalEstablishments');
+let educationalEstablishments = document.querySelector('._educationalEstablishments');
+
+scrollToEducationalEstablishments.addEventListener('click', function () {
+  educationalEstablishments.scrollIntoView({block: "start", behavior: "smooth"});
+})
+
+let scrollToReaders = document.querySelector('._toReaders');
+let readers = document.querySelector('._readers');
+
+scrollToReaders.addEventListener('click', function () {
+  readers.scrollIntoView({block: "start", behavior: "smooth"});
+})
+
+
+// popup closer
+
 let thanksCloser = document.querySelectorAll('._thanks-closer');
 let thanks = document.querySelector('.thanks');
 
