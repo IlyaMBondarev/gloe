@@ -714,10 +714,6 @@ body {
   overflow-y: hidden;
   transition: all 0.4s linear;
 }
-.plan__items-active {
-  max-height: 500px;
-  margin-top: 40px;
-}
 .plan__items::-webkit-scrollbar {
   height: 0;
   width: 0;
