@@ -24,7 +24,7 @@ for (let i = 0; i < scrollToInfo.length; i++) {
 }
 
 let scrollToPlan = document.querySelectorAll('.services__view > button');
-let planSwitcher = plan.querySelector('.plan__switcher');
+let planSwitcher = plan.querySelector('.plan__switcher-container');
 
 for (let i = 0; i < scrollToPlan.length; i++) {
   scrollToPlan[i].addEventListener('click', function () {
