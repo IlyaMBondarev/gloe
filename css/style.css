@@ -611,14 +611,6 @@ body {
     padding-bottom: 112px;
   }
 }
-.plan > .container {
-  padding-left: 0;
-  padding-right: 0;
-}
-.plan > .container > * {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
 .plan__title {
   font-family: "Quattrocento Sans";
   font-size: 18px;
@@ -715,10 +707,16 @@ body {
   margin-right: 0;
 }
 .plan__items {
-  margin-top: 40px;
   overflow-x: auto;
   scrollbar-width: none;
   scrollbar-color: transparent;
+  max-height: 0;
+  overflow-y: hidden;
+  transition: all 0.4s linear;
+}
+.plan__items-active {
+  max-height: 500px;
+  margin-top: 40px;
 }
 .plan__items::-webkit-scrollbar {
   height: 0;

@@ -5,11 +5,26 @@ document.querySelector('.page').classList.add('loaded');
 
 let plan = document.querySelector('.plan');
 
-let planItems = plan.querySelector('.plan__items');
-let planItemsContainer = plan.querySelector('.plan__items-container');
+let planItems = plan.querySelectorAll('.plan__items');
 
-if (planItems.scrollBy) {
-  planItems.scrollBy( ( planItemsContainer.scrollWidth - planItems.offsetWidth + 20 ) / 2 , 0 );
+for (let i = 0; i < planItems.length; i++) {
+  let planItemsContainer = planItems[i].querySelector('.plan__items-container');
+  if (planItems[i].scrollBy) {
+    planItems[i].scrollBy( ( planItemsContainer.scrollWidth - planItems[i].offsetWidth ) / 2 , 0 );
+  }
+}
+
+// event input for switcher
+
+let switchers = plan.querySelectorAll('input[name="plan"]');
+
+for (let i = 0; i < switchers.length; i++) {
+  switchers[i].addEventListener('input', function () {
+    let activePlan = plan.querySelector('.plan__items-active');
+    activePlan.classList.remove('plan__items-active');
+    let currentPlan = plan.querySelector(`._plan-${switchers[i].value}`);
+    currentPlan.classList.add('plan__items-active');
+  })
 }
 
 // set scrolls
