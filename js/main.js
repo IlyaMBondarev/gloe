@@ -8,7 +8,9 @@ let plan = document.querySelector('.plan');
 let planItems = plan.querySelector('.plan__items');
 let planItemsContainer = plan.querySelector('.plan__items-container');
 
-planItems.scrollBy( ( planItemsContainer.scrollWidth - planItems.offsetWidth + 20 ) / 2 , 0 );
+if (planItems.scrollBy) {
+  planItems.scrollBy( ( planItemsContainer.scrollWidth - planItems.offsetWidth + 20 ) / 2 , 0 );
+}
 
 // set scrolls
 
@@ -61,58 +63,89 @@ function isValid(input) {
 }
 
 
-let forms = document.querySelectorAll('._form');
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-for( let i = 0; i < forms.length; i++ ) {
-    let requiredInputs = forms[i].querySelectorAll('._req');
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-    for( let i = 0; i < requiredInputs.length; i++ ) {
-        requiredInputs[i].addEventListener('input', function () {
-            requiredInputs[i].classList.remove('_error');
-        })
-    }
+var forms = document.querySelectorAll('._form');
 
-    forms[i].addEventListener('submit', formSend);
-    
-    async function formSend(event) {
-      event.preventDefault();
-      let errors = 0;
+var _loop = function _loop(i) {
+  var requiredInputs = forms[i].querySelectorAll('._req');
 
-      for( let i = 0; i < requiredInputs.length; i++ ) {
-          if (!isValid(requiredInputs[i])) {
-              errors++;
-              requiredInputs[i].classList.add('_error');
-          }
-      }
+  var _loop2 = function _loop2(_i) {
+    requiredInputs[_i].addEventListener('input', function () {
+      requiredInputs[_i].classList.remove('_error');
+    });
+  };
 
-      let formData = new FormData(forms[i]);
-
-      if (!errors) {
-          //sending message
-
-          /*
-
-          let response = await fetch('sendmail.php', {
-              method: 'POST',
-              body: formData
-          });
-          
-          */
-
-          if ( /* response.ok */ true) {
-
-              // let result = await response.json();
-
-              if (thanks) {
-                thanks.classList.add('active');
-              } else {
-                  alert('Thank you for your interest in our company. We will contact you very soon');
-              }
-              forms[i].reset();
-
-          } else {
-              alert('Error. Please, repeat again');
-          }
-      }
+  for (var _i = 0; _i < requiredInputs.length; _i++) {
+    _loop2(_i);
   }
+
+  forms[i].addEventListener('submit', formSend);
+
+  function formSend(_x) {
+    return _formSend.apply(this, arguments);
+  }
+
+  function _formSend() {
+    _formSend = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(event) {
+      var errors, _i2, formData;
+
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              event.preventDefault();
+              errors = 0;
+
+              for (_i2 = 0; _i2 < requiredInputs.length; _i2++) {
+                if (!isValid(requiredInputs[_i2])) {
+                  errors++;
+
+                  requiredInputs[_i2].classList.add('_error');
+                }
+              }
+
+              formData = new FormData(forms[i]);
+
+              if (!errors) {
+                //sending message
+
+                /*
+                 let response = await fetch('sendmail.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                */
+                if (
+                /* response.ok */
+                true) {
+                  // let result = await response.json();
+                  if (thanks) {
+                    thanks.classList.add('active');
+                  } else {
+                    alert('Thank you for your interest in our company. We will contact you very soon');
+                  }
+
+                  forms[i].reset();
+                } else {
+                  alert('Error. Please, repeat again');
+                }
+              }
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+    return _formSend.apply(this, arguments);
+  }
+};
+
+for (var i = 0; i < forms.length; i++) {
+  _loop(i);
 }
