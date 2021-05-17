@@ -1,6 +1,52 @@
 
 document.querySelector('.page').classList.add('loaded');
 
+// set plan to center
+
+let plan = document.querySelector('.plan');
+
+let planItems = plan.querySelector('.plan__items');
+let planItemsContainer = plan.querySelector('.plan__items-container');
+
+planItems.scrollBy( ( planItemsContainer.scrollWidth - planItems.offsetWidth + 20 ) / 2 , 0 );
+
+// set scrolls
+
+let scrollToInfo = document.querySelectorAll('._scrollToInfo');
+let info = document.querySelector('.info');
+
+for (let i = 0; i < scrollToInfo.length; i++) {
+  scrollToInfo[i].addEventListener('click', function () {
+    info.scrollIntoView({block: "start", behavior: "smooth"});
+  })
+}
+
+let scrollToPlan = document.querySelectorAll('.services__view > button');
+
+for (let i = 0; i < scrollToPlan.length; i++) {
+  scrollToPlan[i].addEventListener('click', function () {
+    plan.scrollIntoView({block: "start", behavior: "smooth"});
+  })
+}
+
+let scrollToFooter = document.querySelectorAll('._scrollToFooter');
+let footer = document.querySelector('.footer');
+
+for (let i = 0; i < scrollToFooter.length; i++) {
+  scrollToFooter[i].addEventListener('click', function () {
+    footer.scrollIntoView({block: "start", behavior: "smooth"});
+  })
+}
+
+let thanksCloser = document.querySelectorAll('._thanks-closer');
+let thanks = document.querySelector('.thanks');
+
+for (let i = 0; i < thanksCloser.length; i++) {
+  thanksCloser[i].addEventListener('click', function () {
+    thanks.classList.remove('active');
+  })
+}
+
 //validation
 
 function isValid(input) {
@@ -57,55 +103,16 @@ for( let i = 0; i < forms.length; i++ ) {
 
               // let result = await response.json();
 
-              let thanksPopup = document.querySelector('.thanks');
-              if (thanksPopup) {
-                  thanksPopup.classList.add('active');
+              if (thanks) {
+                thanks.classList.add('active');
               } else {
                   alert('Thank you for your interest in our company. We will contact you very soon');
               }
-              form.reset();
+              forms[i].reset();
 
           } else {
               alert('Error. Please, repeat again');
           }
       }
   }
-}
-
-// set plan to center
-
-let plan = document.querySelector('.plan');
-
-let planItems = plan.querySelector('.plan__items');
-let planItemsContainer = plan.querySelector('.plan__items-container');
-
-planItems.scrollBy( ( planItemsContainer.scrollWidth - planItems.offsetWidth + 20 ) / 2 , 0 );
-
-
-// set scrolls
-
-let scrollToInfo = document.querySelectorAll('._scrollToInfo');
-let info = document.querySelector('.info');
-
-for (let i = 0; i < scrollToInfo.length; i++) {
-  scrollToInfo[i].addEventListener('click', function () {
-    info.scrollIntoView({block: "start", behavior: "smooth"});
-  })
-}
-
-let scrollToPlan = document.querySelectorAll('.services__view > button');
-
-for (let i = 0; i < scrollToPlan.length; i++) {
-  scrollToPlan[i].addEventListener('click', function () {
-    plan.scrollIntoView({block: "start", behavior: "smooth"});
-  })
-}
-
-let scrollToFooter = document.querySelectorAll('._scrollToFooter');
-let footer = document.querySelector('.footer');
-
-for (let i = 0; i < scrollToFooter.length; i++) {
-  scrollToFooter[i].addEventListener('click', function () {
-    footer.scrollIntoView({block: "start", behavior: "smooth"});
-  })
 }
