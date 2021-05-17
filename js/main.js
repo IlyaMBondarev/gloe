@@ -75,8 +75,10 @@ let thanksCloser = document.querySelectorAll('._thanks-closer');
 let thanks = document.querySelector('.thanks');
 
 for (let i = 0; i < thanksCloser.length; i++) {
-  thanksCloser[i].addEventListener('click', function () {
-    thanks.classList.remove('active');
+  thanksCloser[i].addEventListener('click', function (event) {
+    if (event.target === thanksCloser[i]) {
+      thanks.classList.remove('active');
+    }
   })
 }
 
