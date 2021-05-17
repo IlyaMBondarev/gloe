@@ -24,10 +24,16 @@ for (let i = 0; i < scrollToInfo.length; i++) {
 }
 
 let scrollToPlan = document.querySelectorAll('.services__view > button');
+let planSwitcher = plan.querySelector('.plan__switcher');
 
 for (let i = 0; i < scrollToPlan.length; i++) {
   scrollToPlan[i].addEventListener('click', function () {
     plan.scrollIntoView({block: "start", behavior: "smooth"});
+    if (i <= scrollToPlan.length / 2) {
+      planSwitcher.scrollIntoView({inline: "start", behavior: "smooth"});
+    } else {
+      planSwitcher.scrollIntoView({inline: "end", behavior: "smooth"});
+    }
   })
 }
 
