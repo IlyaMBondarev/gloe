@@ -45,7 +45,7 @@ for (let i = 0; i < planItems.length; i++) {
 let planSwitcher = plan.querySelector('.plan__switcher');
 let planSwitcherContainer = planSwitcher.querySelector('.plan__switcher-container');
 
-if (planSwitcher.scrollBy) {
+if (planSwitcher.scrollBy && document.documentElement.offsetWidth > 576) {
   planSwitcher.scrollBy( ( planSwitcherContainer.scrollWidth - planSwitcher.offsetWidth ) / 2 , 0 );
 }
 
@@ -66,9 +66,9 @@ for (let i = 0; i < scrollToPlan.length; i++) {
   scrollToPlan[i].addEventListener('click', function () {
     plan.scrollIntoView({block: "start", behavior: "smooth"});
     if (i <= scrollToPlan.length / 2) {
-      planSwitcher.scrollIntoView({inline: "start", behavior: "smooth"});
+      planSwitcherContainer.scrollIntoView({inline: "start", behavior: "smooth"});
     } else {
-      planSwitcher.scrollIntoView({inline: "end", behavior: "smooth"});
+      planSwitcherContainer.scrollIntoView({inline: "end", behavior: "smooth"});
     }
   })
 }
