@@ -2,9 +2,36 @@
 
 document.querySelector('.page').classList.add('loaded');
 
-// set plan to center
+// event input for switcher
 
 let plan = document.querySelector('.plan');
+
+let switchers = plan.querySelectorAll('input[name="plan"]');
+let switcherActive = plan.querySelector('input[name="plan"][checked]');
+
+let currentPlan = plan.querySelector("._plan-".concat(switcherActive.value));
+currentPlan.classList.add('plan__items-active');
+currentPlan.style.maxHeight = "".concat(currentPlan.scrollHeight, "px");
+currentPlan.style.marginTop = '40px';
+
+var _loop5 = function _loop5(i) {
+  switchers[i].addEventListener('change', function () {
+    var activePlan = plan.querySelector('.plan__items-active');
+    activePlan.classList.remove('plan__items-active');
+    activePlan.style.maxHeight = '';
+    activePlan.style.marginTop = '';
+    var currentPlan = plan.querySelector("._plan-".concat(switchers[i].value));
+    currentPlan.classList.add('plan__items-active');
+    currentPlan.style.maxHeight = "".concat(currentPlan.scrollHeight, "px");
+    currentPlan.style.marginTop = '40px';
+  });
+};
+
+for (var i = 0; i < switchers.length; i++) {
+  _loop5(i);
+}
+
+// set plan to center
 
 let planItems = plan.querySelectorAll('.plan__items');
 
@@ -20,29 +47,6 @@ let planSwitcherContainer = planSwitcher.querySelector('.plan__switcher-containe
 
 if (planSwitcher.scrollBy) {
   planSwitcher.scrollBy( ( planSwitcherContainer.scrollWidth - planSwitcher.offsetWidth ) / 2 , 0 );
-}
-
-// event input for switcher
-
-let switchers = plan.querySelectorAll('input[name="plan"]');
-let switcherActive = plan.querySelector('input[name="plan"][checked]');
-
-let currentPlan = plan.querySelector("._plan-".concat(switcherActive.value));
-currentPlan.classList.add('plan__items-active');
-currentPlan.style.maxHeight = "".concat(currentPlan.scrollHeight, "px");
-currentPlan.style.marginTop = '40px';
-
-for (let i = 0; i < switchers.length; i++) {
-  switchers[i].addEventListener('input', function () {
-    let activePlan = plan.querySelector('.plan__items-active');
-    activePlan.classList.remove('plan__items-active');
-    activePlan.style.maxHeight = '';
-    activePlan.style.marginTop = '';
-    let currentPlan = plan.querySelector("._plan-".concat(switchers[i].value));
-    currentPlan.classList.add('plan__items-active');
-    currentPlan.style.maxHeight = "".concat(currentPlan.scrollHeight, "px");
-    currentPlan.style.marginTop = '40px';
-  })
 }
 
 // set scrolls
