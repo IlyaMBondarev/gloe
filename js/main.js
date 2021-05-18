@@ -65,11 +65,7 @@ let scrollToPlan = document.querySelectorAll('.services__view > button');
 for (let i = 0; i < scrollToPlan.length; i++) {
   scrollToPlan[i].addEventListener('click', function () {
     plan.scrollIntoView({block: "start", behavior: "smooth"});
-    if (i <= scrollToPlan.length / 2) {
-      planSwitcherContainer.scrollIntoView({inline: "start", behavior: "smooth"});
-    } else {
-      planSwitcherContainer.scrollIntoView({inline: "end", behavior: "smooth"});
-    }
+    switchers[i].scrollIntoView({inline: "start", behavior: "smooth"});
   })
 }
 
