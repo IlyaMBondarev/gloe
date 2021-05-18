@@ -15,6 +15,13 @@ for (let i = 0; i < planItems.length; i++) {
   }
 }
 
+let planSwitcher = plan.querySelector('.plan__switcher');
+let planSwitcherContainer = planSwitcher.querySelector('.plan__switcher-container');
+
+if (planSwitcher.scrollBy) {
+  planSwitcher.scrollBy( ( planSwitcherContainer.scrollWidth - planSwitcher.offsetWidth ) / 2 , 0 );
+}
+
 // event input for switcher
 
 let switchers = plan.querySelectorAll('input[name="plan"]');
@@ -50,7 +57,6 @@ for (let i = 0; i < scrollToInfo.length; i++) {
 }
 
 let scrollToPlan = document.querySelectorAll('.services__view > button');
-let planSwitcher = plan.querySelector('.plan__switcher-container');
 
 for (let i = 0; i < scrollToPlan.length; i++) {
   scrollToPlan[i].addEventListener('click', function () {

@@ -644,6 +644,35 @@ body {
   }
 }
 .plan__switcher-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: fit-content;
+}
+@media screen and (min-width: 576px) {
+  .plan__switcher-container {
+    padding-left: calc((100% - 540px) / 2 );
+    padding-right: calc((100% - 540px) / 2 );
+  }
+}
+@media screen and (min-width: 768px) {
+  .plan__switcher-container {
+    padding-left: calc((100% - 720px) / 2 );
+    padding-right: calc((100% - 720px) / 2 );
+  }
+}
+@media screen and (min-width: 992px) {
+  .plan__switcher-container {
+    padding-left: calc((100% - 960px) / 2 );
+    padding-right: calc((100% - 960px) / 2 );
+  }
+}
+@media screen and (min-width: 1200px) {
+  .plan__switcher-container {
+    padding-left: calc((100% - 1140px) / 2 );
+    padding-right: calc((100% - 1140px) / 2 );
+  }
+}
+.plan__switcher-container > .plan__inner {
   width: fit-content;
   display: flex;
   justify-content: space-between;
@@ -653,7 +682,7 @@ body {
   border-radius: 10px;
 }
 @media screen and (min-width: 992px) {
-  .plan__switcher-container {
+  .plan__switcher-container > .plan__inner {
     padding: 5px;
   }
 }
@@ -719,13 +748,37 @@ body {
   width: 0;
   background-color: transparent;
 }
-@media screen and (min-width: 1200px) {
-  .plan__items {
-    display: flex;
-    justify-content: space-between;
+.plan__items-container {
+  width: fit-content;
+  min-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media screen and (min-width: 576px) {
+  .plan__items-container {
+    padding-left: calc((100% - 540px) / 2 );
+    padding-right: calc((100% - 540px) / 2 );
   }
 }
-.plan__items-container {
+@media screen and (min-width: 768px) {
+  .plan__items-container {
+    padding-left: calc((100% - 720px) / 2 );
+    padding-right: calc((100% - 720px) / 2 );
+  }
+}
+@media screen and (min-width: 992px) {
+  .plan__items-container {
+    padding-left: calc((100% - 960px) / 2 );
+    padding-right: calc((100% - 960px) / 2 );
+  }
+}
+@media screen and (min-width: 1200px) {
+  .plan__items-container {
+    padding-left: calc((100% - 1140px) / 2 );
+    padding-right: calc((100% - 1140px) / 2 );
+  }
+}
+.plan__items-container > .plan__inner {
   width: fit-content;
   min-width: 100%;
   display: flex;
