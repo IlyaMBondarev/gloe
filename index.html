@@ -5,37 +5,92 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CLOBAL Electronic library</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+          integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Dosis:wght@400;500&family=Open+Sans:wght@400;700&family=Quattrocento+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Dosis:wght@400;500&family=Open+Sans:wght@400;700&family=Quattrocento+Sans:wght@400;700&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <main class="page">
-<div class="thanks _thanks-closer">
-    <div class="thanks__main">
-        <h4 class="thanks__title">Thank you for your message!</h4>
-        <p class="thanks__content">Thank you for your interest in our company.<br>We will contact you very soon</p>
-        <button class="thanks__button _thanks-closer">Return to the GLOE</button>
-    </div>
-</div><header class="header">
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <a href="#">
-                <picture>
-                    <source srcset="img/logo_desktop.svg" type="image/svg+xml" media="(min-width: 768px)">
-                    <img src="img/logo_mobile.svg" alt="GLOE">
-                </picture>
-            </a>
-            <button class="header__link _scrollToFooter">CONTACT</button>
+    <div class="thanks _thanks-closer">
+        <div class="thanks__main">
+            <h4 class="thanks__title">Thank you for your message!</h4>
+            <p class="thanks__content">Thank you for your interest in our company.<br>We will contact you very soon</p>
+            <button class="thanks__button _thanks-closer">Return to the GLOE</button>
         </div>
     </div>
-</header>    <div class="content">
+    <div class="popup-plan _popup-plan-closer">   
+        <div class="popup-plan__main">
+            <h4 class="popup-plan__title">You have chosen a <span id="planName">Premium</span> plan for <span id="switcherValue">Educational Establishments</span></h4>
+            <button class="popup-plan__close _popup-plan-closer">
+                <svg class="_popup-plan-closer" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="_popup-plan-closer" d="M6.99999 5.58623L11.95 0.63623L13.364 2.05023L8.41399 7.00023L13.364 11.9502L11.95 13.3642L6.99999 8.41423L2.04999 13.3642L0.635986 11.9502L5.58599 7.00023L0.635986 2.05023L2.04999 0.63623L6.99999 5.58623Z" fill="#75797C"/>
+                </svg>
+            </button>
+            <form class="popup-plan__form _form" action="#">
+                <p class="popup-plan__content popup-plan__content-mobile-not">Enter your Name and Email Address</p>
+                <div class="popup-plan__block">
+                    <div class="popup-plan__item">
+                        <p class="popup-plan__content popup-plan__content-mobile">Enter your Name</p>
+                        <input class="popup-plan__input _req" name="name" type="text" placeholder="Your Name">
+                    </div>
+                    <div class="popup-plan__item">
+                        <p class="popup-plan__content popup-plan__content-mobile">Enter your Email Address</p>
+                        <input class="popup-plan__input _req" name="email" type="email" placeholder="Email Address">
+                    </div>
+                </div>
+                <p class="popup-plan__content popup-plan__content-mobile-not">Indicate the type of your business and type of service you would like to receive</p>
+                <div class="popup-plan__block">
+                    <div class="popup-plan__item">
+                        <p class="popup-plan__content popup-plan__content-mobile">Indicate the type of your business</p>
+                        <select class="popup-plan__select _req" name="business">
+                            <option class="popup-plan__select_placeholder" value disabled selected>Type of your business</option>
+                            <option value="Helping with scientific matter search">Helping with scientific matter search</option>
+                            <option value="Establishing and supporting communities">Establishing and supporting communities</option>
+                            <option value="Offering research-related advice to employees and students">Offering research-related advice to employees and students</option>
+                        </select>
+                    </div>
+                    <div class="popup-plan__item">
+                        <p class="popup-plan__content popup-plan__content-mobile">Enter type of service you would like to receive</p>
+                        <select class="popup-plan__select _req" name="service">
+                            <option class="popup-plan__select_placeholder" value disabled selected>Type of service</option>
+                            <option value="Helping with scientific matter search">Helping with scientific matter search</option>
+                            <option value="Establishing and supporting communities">Establishing and supporting communities</option>
+                            <option value="Offering research-related advice to employees and students">Offering research-related advice to employees and students</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="popup-plan__item">
+                    <p class="popup-plan__content">Please tell us about what you are doing. Tell us what you do, what kind of business you have, how much money you make. It is very important to tell in two lines</p>
+                    <textarea class="popup-plan__textarea _req" name="message" placeholder="Your Message"></textarea>
+                </div>
+                <button class="popup-plan__submit" type="submit">Send the message</button>
+            </form>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="#">
+                    <picture>
+                        <source srcset="img/logo_desktop.svg" type="image/svg+xml" media="(min-width: 768px)">
+                        <img src="img/logo_mobile.svg" alt="GLOE">
+                    </picture>
+                </a>
+                <button class="header__link _scrollToFooter">CONTACT</button>
+            </div>
+        </div>
+    </header>
+    <div class="content">
         <section class="main-screen">
             <div class="main-screen__container container">
                 <h1 class="main-screen__title">GLOE</h1>
                 <h3 class="main-screen__subtitle">GLOBAL Electronic library</h3>
-                <button class="main-screen__button _scrollToInfo"><span>Get started</span><img src="img/icons/chevron_right_white.svg" alt=""></button>
+                <button class="main-screen__button _scrollToInfo"><span>Get started</span><img
+                        src="img/icons/chevron_right_white.svg" alt=""></button>
                 <div class="main-screen__image">
                     <img src="img/main-screen.svg" alt="">
                 </div>
@@ -45,7 +100,8 @@
             <div class="container">
                 <h4 class="info__title">What are we doing</h4>
                 <div class="info__line"></div>
-                <p class="info__subtitle">We are for world peace. Our services are targeted at a wide range of consumers. We will help everyone, even those who do not need help</p>
+                <p class="info__subtitle">We are for world peace. Our services are targeted at a wide range of
+                    consumers. We will help everyone, even those who do not need help</p>
                 <section class="row info__items">
                     <div class="col-12 col-lg-6">
                         <article class="info__item _toLibraries">
@@ -103,19 +159,33 @@
                         <h4 class="services__title">Services for Libraries</h4>
                         <div class="services__item">
                             <h5>Helping you to go online</h5>
-                            <p>We can help you at the new stage of your library’s development and arrange a library service online. Thanks to that, you will be able to render services to library readers remotely, as well as contact online your colleagues from other libraries throughout the world. With the round-the-clock access and user-friendly search engine, users will quickly find anything they need – from anywhere and at any time. You can also get feedback and systemize it to see what fields of your work require enhancement</p>
+                            <p>We can help you at the new stage of your library’s development and arrange a library
+                                service online. Thanks to that, you will be able to render services to library readers
+                                remotely, as well as contact online your colleagues from other libraries throughout the
+                                world. With the round-the-clock access and user-friendly search engine, users will
+                                quickly find anything they need – from anywhere and at any time. You can also get
+                                feedback and systemize it to see what fields of your work require enhancement</p>
                         </div>
                         <div class="services__item">
                             <h5>Digitalizing books</h5>
-                            <p>We can convert your books to the digital – fast and in the required resolution. We use high-tech scanners capable of 1,000+ pages per hour. To speed up your going online even further, you can use our extensive digital book base. We scan rare and illustrated books with high resolution, saving all the printing details</p>
+                            <p>We can convert your books to the digital – fast and in the required resolution. We use
+                                high-tech scanners capable of 1,000+ pages per hour. To speed up your going online even
+                                further, you can use our extensive digital book base. We scan rare and illustrated books
+                                with high resolution, saving all the printing details</p>
                         </div>
                         <div class="services__item">
                             <h5>Offering library-card-based advice </h5>
-                            <p>We can compile a base of your offline and online readers. Using their reading history, we can offer online service users and librarians reading selection advice. This can help find the appropriate literature in mere minutes</p>
+                            <p>We can compile a base of your offline and online readers. Using their reading history, we
+                                can offer online service users and librarians reading selection advice. This can help
+                                find the appropriate literature in mere minutes</p>
                         </div>
                         <div class="services__item">
                             <h5>Establishing a dedicated community of fellow thinkers</h5>
-                            <p>Harry Potter fans and admirers of Terry Pratchett, contemporary poetry lovers and adherers of historic memoirs – all of them are there, attending your library. We know how to find and bring them together, as well as to setup an event schedule for their community for them to share their thoughts about books they have read, give personal advice, and discuss novelties. Thus, your library will have its own book club</p>
+                            <p>Harry Potter fans and admirers of Terry Pratchett, contemporary poetry lovers and
+                                adherers of historic memoirs – all of them are there, attending your library. We know
+                                how to find and bring them together, as well as to setup an event schedule for their
+                                community for them to share their thoughts about books they have read, give personal
+                                advice, and discuss novelties. Thus, your library will have its own book club</p>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
@@ -127,8 +197,10 @@
                                 <button>
                                     <label for="libraries">
                                         <span>View pricing details</span>
-                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.78132 4.99999L0.481323 1.69999L1.42399 0.757324L5.66666 4.99999L1.42399 9.24266L0.481323 8.29999L3.78132 4.99999Z" fill="#357ABD"/>
+                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.78132 4.99999L0.481323 1.69999L1.42399 0.757324L5.66666 4.99999L1.42399 9.24266L0.481323 8.29999L3.78132 4.99999Z"
+                                                  fill="#357ABD"/>
                                         </svg>
                                     </label>
                                 </button>
@@ -142,15 +214,27 @@
                         <h4 class="services__title">Services for Book Stores</h4>
                         <div class="services__item">
                             <h5>Offering personal advice to your buyers</h5>
-                            <p>We can design a unique book rating system for you and engage clubs of readers and literary professionals. Visitors of online book stores will be offered purchase advice based on assortment renewal and actions of other buyers. We do not just offer world bestsellers but also collector’s pieces and dedicated literature. Apart from displaying novelties and popular goods, you will be able to customize pop-up windows offering books that you need to sell first along with campaign products</p>
+                            <p>We can design a unique book rating system for you and engage clubs of readers and
+                                literary professionals. Visitors of online book stores will be offered purchase advice
+                                based on assortment renewal and actions of other buyers. We do not just offer world
+                                bestsellers but also collector’s pieces and dedicated literature. Apart from displaying
+                                novelties and popular goods, you will be able to customize pop-up windows offering books
+                                that you need to sell first along with campaign products</p>
                         </div>
                         <div class="services__item">
                             <h5>Offering a keyword-based book search</h5>
-                            <p>With it, buyers will be able to find any book they need even if they do not know its author or full name. We can develop keyword selection recommendations for you based on literary genre names, fields of reference, names of central characters, book publication times, and many other parameters for the search to take mere seconds. This will save your buyers’ time, and they will feel pleased about attending your store</p>
+                            <p>With it, buyers will be able to find any book they need even if they do not know its
+                                author or full name. We can develop keyword selection recommendations for you based on
+                                literary genre names, fields of reference, names of central characters, book publication
+                                times, and many other parameters for the search to take mere seconds. This will save
+                                your buyers’ time, and they will feel pleased about attending your store</p>
                         </div>
                         <div class="services__item">
                             <h5>Offering an online platform</h5>
-                            <p>We can make a virtual copy of your book store – an Internet platform with book notes, readers’ ratings and opinions, a user-friendly payment engine, and anything else you might need to succeed. Your audience will go beyond your city, and thousands of buyers will be able to purchase your books regardless the distance</p>
+                            <p>We can make a virtual copy of your book store – an Internet platform with book notes,
+                                readers’ ratings and opinions, a user-friendly payment engine, and anything else you
+                                might need to succeed. Your audience will go beyond your city, and thousands of buyers
+                                will be able to purchase your books regardless the distance</p>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
@@ -162,8 +246,10 @@
                                 <button>
                                     <label for="bookStories">
                                         <span>View pricing details</span>
-                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.78132 4.99999L0.481323 1.69999L1.42399 0.757324L5.66666 4.99999L1.42399 9.24266L0.481323 8.29999L3.78132 4.99999Z" fill="#357ABD"/>
+                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.78132 4.99999L0.481323 1.69999L1.42399 0.757324L5.66666 4.99999L1.42399 9.24266L0.481323 8.29999L3.78132 4.99999Z"
+                                                  fill="#357ABD"/>
                                         </svg>
                                     </label>
                                 </button>
@@ -177,16 +263,25 @@
                         <h4 class="services__title">Services for Educational Establishments</h4>
                         <div class="services__item">
                             <h5>Helping with scientific matter search</h5>
-                            <p>With our united search system, which covers publications by various publishers, searching for scientific matters will be easier. Our company makes sure information is updated on time, and we are ready to offer you the most recent matters specially selected in the field of your research</p>
+                            <p>With our united search system, which covers publications by various publishers, searching
+                                for scientific matters will be easier. Our company makes sure information is updated on
+                                time, and we are ready to offer you the most recent matters specially selected in the
+                                field of your research</p>
                         </div>
                         <div class="services__item">
                             <h5>Establishing and supporting communities</h5>
-                            <p>We can establish an expert community that will help with finding answers to scientific matter search questions. Moreover, we can support communities of student and teachers established within your university by offering you a user-friendly platform for sharing information, hosting conferences as well as other education and entertainment events</p>
+                            <p>We can establish an expert community that will help with finding answers to scientific
+                                matter search questions. Moreover, we can support communities of student and teachers
+                                established within your university by offering you a user-friendly platform for sharing
+                                information, hosting conferences as well as other education and entertainment events</p>
                         </div>
                         <div class="services__item">
                             <h5>Offering research-related advice to employees and students</h5>
                             <p>Offering research-related advice to employees and students
-                                Our flexible and multifunctional search engine will guide you through many millions of issues in our scientific matter base and help you find the most dedicated publications, articles, and monographs. Personal advice will keep you posted on publication of new materials on the subject you are interested in</p>
+                                Our flexible and multifunctional search engine will guide you through many millions of
+                                issues in our scientific matter base and help you find the most dedicated publications,
+                                articles, and monographs. Personal advice will keep you posted on publication of new
+                                materials on the subject you are interested in</p>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
@@ -198,8 +293,10 @@
                                 <button>
                                     <label for="educationalEstablishments">
                                         <span>View pricing details</span>
-                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.78132 4.99999L0.481323 1.69999L1.42399 0.757324L5.66666 4.99999L1.42399 9.24266L0.481323 8.29999L3.78132 4.99999Z" fill="#357ABD"/>
+                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.78132 4.99999L0.481323 1.69999L1.42399 0.757324L5.66666 4.99999L1.42399 9.24266L0.481323 8.29999L3.78132 4.99999Z"
+                                                  fill="#357ABD"/>
                                         </svg>
                                     </label>
                                 </button>
@@ -213,19 +310,32 @@
                         <h4 class="services__title">Services for Readers</h4>
                         <div class="services__item">
                             <h5>Digitalizing your library</h5>
-                            <p>With our united search system, which covers publications by various publishers, searching for scientific matters will be easier. Our company makes sure information is updated on time, and we are ready to offer you the most recent matters specially selected in the field of your research</p>
+                            <p>With our united search system, which covers publications by various publishers, searching
+                                for scientific matters will be easier. Our company makes sure information is updated on
+                                time, and we are ready to offer you the most recent matters specially selected in the
+                                field of your research</p>
                         </div>
                         <div class="services__item">
                             <h5>Uploading your books to the cloud</h5>
-                            <p>We can establish an expert community that will help with finding answers to scientific matter search questions. Moreover, we can support communities of student and teachers established within your university by offering you a user-friendly platform for sharing information, hosting conferences as well as other education and entertainment events</p>
+                            <p>We can establish an expert community that will help with finding answers to scientific
+                                matter search questions. Moreover, we can support communities of student and teachers
+                                established within your university by offering you a user-friendly platform for sharing
+                                information, hosting conferences as well as other education and entertainment events</p>
                         </div>
                         <div class="services__item">
                             <h5>Digitalizing your library</h5>
-                            <p>Offering research-related advice to employees and students. Our flexible and multifunctional search engine will guide you through many millions of issues in our scientific matter base and help you find the most dedicated publications, articles, and monographs. Personal advice will keep you posted on publication of new materials on the subject you are interested in</p>
+                            <p>Offering research-related advice to employees and students. Our flexible and
+                                multifunctional search engine will guide you through many millions of issues in our
+                                scientific matter base and help you find the most dedicated publications, articles, and
+                                monographs. Personal advice will keep you posted on publication of new materials on the
+                                subject you are interested in</p>
                         </div>
                         <div class="services__item">
                             <h5>Uploading your books to the cloud </h5>
-                            <p>We can offer you a place to upload your library and arrange it into catalogues for you. All your family members will have access to the cloud storage and be able to update the collection. Your home library will be available from anywhere globally. Access it from your mobile, tablet, or PC</p>
+                            <p>We can offer you a place to upload your library and arrange it into catalogues for you.
+                                All your family members will have access to the cloud storage and be able to update the
+                                collection. Your home library will be available from anywhere globally. Access it from
+                                your mobile, tablet, or PC</p>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
@@ -237,8 +347,10 @@
                                 <button>
                                     <label for="readers">
                                         <span>View pricing details</span>
-                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.78132 4.99999L0.481323 1.69999L1.42399 0.757324L5.66666 4.99999L1.42399 9.24266L0.481323 8.29999L3.78132 4.99999Z" fill="#357ABD"/>
+                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.78132 4.99999L0.481323 1.69999L1.42399 0.757324L5.66666 4.99999L1.42399 9.24266L0.481323 8.29999L3.78132 4.99999Z"
+                                                  fill="#357ABD"/>
                                         </svg>
                                     </label>
                                 </button>
@@ -249,25 +361,26 @@
                 </article>
             </div>
         </section>
-        <form class="plan" action="#">
+        <section class="plan">
             <h4 class="plan__title">Get the right plan for future product</h4>
             <div class="plan__switcher">
                 <div class="plan__switcher-container">
                     <div class="plan__inner">
                         <div class="plan__switch">
-                            <input type="radio" name="plan" value="libraries" id="libraries" checked>
+                            <input type="radio" name="plan" value="Libraries" id="libraries" checked>
                             <label for="libraries">for Libraries</label>
                         </div>
                         <div class="plan__switch">
-                            <input type="radio" name="plan" value="bookStories" id="bookStories">
+                            <input type="radio" name="plan" value="Book Stores" id="bookStories">
                             <label for="bookStories">for Book Stores</label>
                         </div>
                         <div class="plan__switch">
-                            <input type="radio" name="plan" value="educationalEstablishments" id="educationalEstablishments">
+                            <input type="radio" name="plan" value="Educational Establishments"
+                                   id="educationalEstablishments">
                             <label for="educationalEstablishments">for Educational Establishments</label>
                         </div>
                         <div class="plan__switch">
-                            <input type="radio" name="plan" value="readers" id="readers">
+                            <input type="radio" name="plan" value="Readers" id="readers">
                             <label for="readers">for Readers</label>
                         </div>
                     </div>
@@ -277,28 +390,28 @@
                 <div class="plan__items-container">
                     <div class="plan__inner">
                         <div class="plan__item item">
-                            <p class="item__name">Starter</p>
+                            <p class="item__name" data-planName="Starter">Starter</p>
                             <p class="item__price"><span>Free</span></p>
                             <p class="item__content">1 Website</p>
                             <p class="item__content">5 GB Hosting</p>
                             <p class="item__content">Limited Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Starter" type="submit">Get Started</button>
                         </div>
                         <div class="plan__item item item-active">
-                            <p class="item__name">Premium</p>
+                            <p class="item__name" data-planName="Premium">Premium</p>
                             <p class="item__price"><span>$29</span>/month</p>
                             <p class="item__content">10 Website</p>
                             <p class="item__content">15 GB Hosting</p>
                             <p class="item__content">Premium Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Premium" type="submit">Get Started</button>
                         </div>
                         <div class="plan__item item">
-                            <p class="item__name">Enterprise</p>
+                            <p class="item__name" data-planName="Enterprise">Enterprise</p>
                             <p class="item__price"><span>$49</span>/month</p>
                             <p class="item__content">Unlimited Website</p>
                             <p class="item__content">50 GB Hosting</p>
                             <p class="item__content">Premium Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Enterprise" type="submit">Get Started</button>
                         </div>
                     </div>
                 </div>
@@ -307,28 +420,28 @@
                 <div class="plan__items-container">
                     <div class="plan__inner">
                         <div class="plan__item item">
-                            <p class="item__name">Starter</p>
+                            <p class="item__name" data-planName="Starter">Starter</p>
                             <p class="item__price"><span>Free</span></p>
                             <p class="item__content">1 Website</p>
                             <p class="item__content">5 GB Hosting</p>
                             <p class="item__content">Limited Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Starter" type="submit">Get Started</button>
                         </div>
                         <div class="plan__item item item-active">
-                            <p class="item__name">Premium</p>
+                            <p class="item__name" data-planName="Premium">Premium</p>
                             <p class="item__price"><span>$29</span>/month</p>
                             <p class="item__content">10 Website</p>
                             <p class="item__content">15 GB Hosting</p>
                             <p class="item__content">Premium Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Premium" type="submit">Get Started</button>
                         </div>
                         <div class="plan__item item">
-                            <p class="item__name">Enterprise</p>
+                            <p class="item__name" data-planName="Enterprise">Enterprise</p>
                             <p class="item__price"><span>$49</span>/month</p>
                             <p class="item__content">Unlimited Website</p>
                             <p class="item__content">50 GB Hosting</p>
                             <p class="item__content">Premium Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Enterprise" type="submit">Get Started</button>
                         </div>
                     </div>
                 </div>
@@ -337,28 +450,28 @@
                 <div class="plan__items-container">
                     <div class="plan__inner">
                         <div class="plan__item item">
-                            <p class="item__name">Starter</p>
+                            <p class="item__name" data-planName="Starter">Starter</p>
                             <p class="item__price"><span>Free</span></p>
                             <p class="item__content">1 Website</p>
                             <p class="item__content">5 GB Hosting</p>
                             <p class="item__content">Limited Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Starter" type="submit">Get Started</button>
                         </div>
                         <div class="plan__item item item-active">
-                            <p class="item__name">Premium</p>
+                            <p class="item__name" data-planName="Premium">Premium</p>
                             <p class="item__price"><span>$29</span>/month</p>
                             <p class="item__content">10 Website</p>
                             <p class="item__content">15 GB Hosting</p>
                             <p class="item__content">Premium Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Premium" type="submit">Get Started</button>
                         </div>
                         <div class="plan__item item">
-                            <p class="item__name">Enterprise</p>
+                            <p class="item__name" data-planName="Enterprise">Enterprise</p>
                             <p class="item__price"><span>$49</span>/month</p>
                             <p class="item__content">Unlimited Website</p>
                             <p class="item__content">50 GB Hosting</p>
                             <p class="item__content">Premium Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Enterprise" type="submit">Get Started</button>
                         </div>
                     </div>
                 </div>
@@ -372,7 +485,7 @@
                             <p class="item__content">1 Website</p>
                             <p class="item__content">5 GB Hosting</p>
                             <p class="item__content">Limited Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Starter" type="submit">Get Started</button>
                         </div>
                         <div class="plan__item item item-active">
                             <p class="item__name">Premium</p>
@@ -380,7 +493,7 @@
                             <p class="item__content">10 Website</p>
                             <p class="item__content">15 GB Hosting</p>
                             <p class="item__content">Premium Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Premium" type="submit">Get Started</button>
                         </div>
                         <div class="plan__item item">
                             <p class="item__name">Enterprise</p>
@@ -388,12 +501,12 @@
                             <p class="item__content">Unlimited Website</p>
                             <p class="item__content">50 GB Hosting</p>
                             <p class="item__content">Premium Support</p>
-                            <button class="item__submit" type="submit">Get Started</button>
+                            <button class="item__submit _popup-plan-opener" data-title="Enterprise" type="submit">Get Started</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
+        </section>
         <section class="message">
             <div class="container">
                 <div class="row">
@@ -413,25 +526,31 @@
             </div>
         </section>
     </div>
-<footer class="footer">
-    <div class="container h-100">
-        <div class="row flex-column justify-content-between flex-lg-row h-100">
-            <div class="col-7 col-lg-4 order-lg-1">
-                <p class="text-lg-right">Unit&nbsp;617, 6/F, 131&nbsp;-&nbsp;132 Connaught&nbsp;Road&nbsp;West, Solo&nbsp;Workshops</p>
-            </div>
-            <div class="col-7 col-lg-4">
-                <p>&copy; 2021 GLOE. All rights reserved</p>
-            </div>
-            <div class="h-100 col-5 col-lg-4">
-                <ul class="h-100 d-flex flex-column justify-content-between align-items-end flex-lg-row justify-content-lg-start align-items-lg-start">
-                    <li class="footer__list-item"><a href="#">Terms of Conditions</a></li>
-                    <li class="footer__list-item"><a href="#">Policy</a></li>
-                </ul>
+    <footer class="footer">
+        <div class="container h-100">
+            <div class="row flex-column justify-content-between flex-lg-row h-100">
+                <div class="col-7 col-lg-4 order-lg-1">
+                    <p class="text-lg-right">Unit&nbsp;617, 6/F, 131&nbsp;-&nbsp;132 Connaught&nbsp;Road&nbsp;West, Solo&nbsp;Workshops</p>
+                </div>
+                <div class="col-7 col-lg-4">
+                    <p>&copy; 2021 GLOE. All rights reserved</p>
+                </div>
+                <div class="h-100 col-5 col-lg-4">
+                    <ul class="h-100 d-flex flex-column justify-content-between align-items-end flex-lg-row justify-content-lg-start align-items-lg-start">
+                        <li class="footer__list-item"><a href="terms.html" target="_blank">Terms of Conditions</a></li>
+                        <li class="footer__list-item"><a href="privacy.html" target="_blank">Policy</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer></main>
-<script src="js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    </footer>
+</main>
+<script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
 </body>
 </html>
