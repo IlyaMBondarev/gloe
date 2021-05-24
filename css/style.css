@@ -1369,6 +1369,8 @@ margin-top: 30px;
   top: calc(100% - 2px);
   left: 3px;
   padding: 0 0 10px 0;
+  max-height: 200px;
+  overflow: auto;
 
   display: flex;
   flex-direction: column;
