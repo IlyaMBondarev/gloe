@@ -231,40 +231,46 @@ body {
 }
 
 .breadcrumb__link{
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 30px;
-color: #61676C;
-}
-.breadcrumb__link:hover{
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #61676C;
+}
+.breadcrumb__link:hover{
   color: #357ABD;
-  }
+}
 .breadcrumb__link_active{
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 12px;
+  line-height: 20px;
   color: #61676C;
-  opacity: 50%;
-  }
-  .breadcrumb__link_active:hover{
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 30px;
-    color: #61676C;
-    opacity: 50%;
-    }
+  opacity: 0.5;
+}
+.breadcrumb__link_active:hover{
+  color: #61676C;
+}
 .breadcrumb-item+.breadcrumb-item::before {
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #61676C;
 }
 
+@media screen and (min-width: 992px) {
+  .breadcrumb__link{
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .breadcrumb__link_active{
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .breadcrumb-item+.breadcrumb-item::before {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
 .main-screen__container {
   position: relative;
   padding-top: 20px;
@@ -960,125 +966,8 @@ color: #61676C;
   }
 }
 
-.message {
-  background-color: #E5E9F3;
-  padding: 20px 0;
-}
-@media screen and (min-width: 768px) {
-  .message {
-    padding: 50px 0;
-  }
-}
-@media screen and (min-width: 992px) {
-  .message {
-    padding: 112px 0;
-  }
-}
-.message__title {
-  font-family: "Dosis";
-  color: #323D47;
-  font-size: 18px;
-  line-height: 23px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-@media screen and (min-width: 768px) {
-  .message__title {
-    font-size: 36px;
-    line-height: 46px;
-    margin-bottom: 40px;
-  }
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-.form__block {
-  margin-bottom: 10px;
-}
-@media screen and (min-width: 768px) {
-  .form__block {
-    margin-bottom: 20px;
-  }
-}
-.form__block input {
-  width: 100%;
-  font-family: "Open Sans";
-  font-size: 12px;
-  line-height: 14px;
-  color: #323D47;
-  padding: 10px;
-  background: #ffffff;
-  border: 1px solid #D0D0D0;
-  border-radius: 2px;
-}
-.form__block input::placeholder {
-  color: #D0D0D0;
-}
-@media screen and (min-width: 768px) {
-  .form__block input {
-    font-size: 16px;
-    line-height: 30px;
-    padding: 13px;
-  }
-}
-.form__block textarea {
-  width: 100%;
-  font-family: "Open Sans";
-  font-size: 12px;
-  line-height: 14px;
-  color: #323D47;
-  padding: 10px;
-  min-height: 70px;
-  resize: none;
-  background: #ffffff;
-  border: 1px solid #D0D0D0;
-  border-radius: 2px;
-}
-.form__block textarea::placeholder {
-  color: #D0D0D0;
-}
 ._error {
   border-color: orangered !important;
-}
-@media screen and (min-width: 768px) {
-  .form__block textarea {
-    font-size: 16px;
-    line-height: 30px;
-    padding: 13px;
-    min-height: 160px;
-  }
-}
-.form__submit {
-  display: flex;
-  align-items: center;
-  font-family: "DM Sans";
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 700;
-  color: #ffffff;
-  padding: 9px;
-  background: #357ABD;
-  border-radius: 6px;
-  margin-top: 6px;
-  transition: all 0.2s ease;
-}
-.form__submit span {
-  margin: 0 auto;
-}
-@media screen and (min-width: 768px) {
-  .form__submit {
-    margin-top: 20px;
-    font-size: 18px;
-    line-height: 23px;
-    padding: 17px;
-    border-radius: 10px;
-  }
-  .form__submit:hover {
-    background: rgba(53, 122, 189, 0.7);
-  }
 }
 
 .footer {
@@ -1233,6 +1122,9 @@ margin-top: 30px;
   background-color: transparent;
   display: none;
 }
+.popup-plan__close:hover svg *{
+  fill: #357ABD;
+}
 .popup-plan__title{
   font-family: Quattrocento Sans;
   font-style: normal;
@@ -1318,6 +1210,9 @@ margin-top: 30px;
 .popup-plan__input::placeholder{
   color: #D0D0D0;
 }
+.popup-plan__input:hover {
+  border-color: #357ABD;
+}
 .popup-plan__select{
   position: relative;
   width: 100%;
@@ -1326,15 +1221,11 @@ margin-top: 30px;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  line-height: 30px;
+  line-height: 14px;
   color: #61676C;
   background: #FFFFFF;
-  border: 1px solid #D0D0D0;
   box-sizing: border-box;
   border-radius: 2px;
-}
-.popup-plan__select[data-state="active"] .__select__title::before {
-  transform: scaleY(-1) translateY(-5px);
 }
 .popup-plan__select[data-state="active"] .__select__content {
   opacity: 1;
@@ -1342,6 +1233,7 @@ margin-top: 30px;
 .popup-plan__select[data-state="active"] .__select__label + .__select__input + .__select__label {
   max-height: 56px;
   border-top-width: 1px;
+  padding: 12px;
 }
 .__select__title {
   display: flex;
@@ -1356,10 +1248,15 @@ margin-top: 30px;
 .__select__title::before {
   content: url('../img/icons/select_arrow.svg');
   position: absolute;
-  top: 10px;
-  right: 16px;
+  top: 8px;
+  right: 12px;
   display: block;
-  transition: all 0.3s ease-out;
+}
+@media screen and ( min-width: 992px ) {
+  .__select__title::before {
+    top: 14px;
+    right: 16px;
+  }
 }
 .__select__title:hover {
   border-color: #357ABD;
@@ -1369,11 +1266,9 @@ margin-top: 30px;
   top: calc(100% - 2px);
   left: 3px;
   padding: 0 0 10px 0;
-  max-height: 200px;
+  max-height: 250px;
   overflow: auto;
 
-  display: flex;
-  flex-direction: column;
   width: calc(100% - 6px);
 
   background-color: #ffffff;
@@ -1414,10 +1309,6 @@ margin-top: 30px;
   
   overflow: hidden;
 }
-.__select__label + input + .__select__label {
-  border-top: 0 solid #C7CCD160;
-}
-
 .__select__label:hover {
   background-color: rgba(59, 120, 183, 0.2) !important;
 }
@@ -1439,6 +1330,9 @@ margin-top: 30px;
 }
 .popup-plan__textarea::placeholder{
   color: #D0D0D0;
+}
+.popup-plan__textarea:hover {
+  border-color: #357ABD;
 }
 .popup-plan__submit{
   width: 100%;
@@ -1465,7 +1359,11 @@ margin-top: 30px;
   }
   .popup-plan__select{
     font-size: 16px;
+    line-height: 20px;
     height: 56px;
+  }
+  .__select__content {
+    padding-bottom: 4px;
   }
   .popup-plan__textarea{
     font-size: 16px;

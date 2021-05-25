@@ -8,7 +8,6 @@ let plan = document.querySelector('.plan');
 
 let switchers = plan.querySelectorAll('input[name="plan"]');
 let switcherActive = plan.querySelector('input[name="plan"][checked]');
-let switcherActiveText = switcherActive.value;
 
 let currentPlan = plan.querySelector("._plan-".concat(switcherActive.id));
 currentPlan.classList.add('plan__items-active');
@@ -128,11 +127,49 @@ for (var i = 0; i < thanksCloser.length; i++) {
 
 let popupPlanCloser = document.querySelectorAll('._popup-plan-closer');
 let popupPlanOpener = document.querySelectorAll('._popup-plan-opener');
-let popupPlan = document.querySelector('.popup-plan');
+"use strict";
+
+var popupPlan = document.querySelector('.popup-plan');
 
 var _loop7 = function _loop9(i) {
   popupPlanOpener[i].addEventListener('click', function (event) {
-    popupPlan.querySelector('#switcherValue').innerHTML = switcherActiveText;
+    for (var j = 0; j < switchers.length; j++) {
+      if (switchers[j].checked) {
+        var _ret = function () {
+          popupPlan.querySelector('#switcherValue').innerHTML = switchers[j].value;
+          var options = document.querySelectorAll("._".concat(switchers[j].id, " h5"));
+          var selectContent = "\n        <input id=\"services0\" class=\"__select__input\" type=\"radio\" name=\"services\" value=\"\" checked />\n        <label for=\"services0\" class=\"__select__label\">Type of services</label>";
+
+          for (var k = 0; k < options.length; k++) {
+            selectContent += "\n          <input id=\"services".concat(k + 1, "\" class=\"__select__input\" type=\"radio\" name=\"services\" value=\"").concat(options[k].innerText, "\" />\n          <label for=\"services").concat(k + 1, "\" class=\"__select__label\">").concat(options[k].innerText, "</label>");
+          }
+
+          let selectServicesSingle = popupPlan.querySelector('#servicesSelect');
+          let selectServicesSingle_title = selectServicesSingle.querySelector('#servicesSelectTitle');
+          let selectServicesContent = selectServicesSingle.querySelector('#servicesSelectContent');
+
+          var _loop14 = function _loop(m) {
+            selectServicesSingle_labels[m].addEventListener('click', function (evt) {
+              selectServicesSingle_title.textContent = selectServicesSingle_labels[m].textContent;
+              selectServicesSingle.setAttribute('data-state', '');
+            });
+          };
+
+          selectServicesContent.innerHTML = selectContent;
+          selectServicesSingle_title.textContent = selectServicesSingle_title.getAttribute('data-default');
+          let selectServicesSingle_labels = selectServicesContent.querySelectorAll('.__select__label');
+
+          for (var m = 0; m < selectServicesSingle_labels.length; m++) {
+            _loop14(m);
+          }
+
+          return "break";
+        }();
+
+        if (_ret === "break") break;
+      }
+    }
+
     popupPlan.querySelector('#planName').innerHTML = event.target.dataset.title;
     popupPlan.classList.add('active');
   });
@@ -235,7 +272,9 @@ var selectSingle = popupPlan.querySelectorAll('.popup-plan__select');
 
 var _loop11 = function _loop(i) {
   var selectSingle_title = selectSingle[i].querySelector('.__select__title');
-  var selectSingle_labels = selectSingle[i].querySelectorAll('.__select__label'); // Toggle menu
+  var selectSingle_labels = selectSingle[i].querySelectorAll('.__select__label');
+  
+  // Toggle menu
 
   selectSingle_title.addEventListener('click', function () {
     if ('active' === selectSingle[i].getAttribute('data-state')) {
@@ -243,7 +282,9 @@ var _loop11 = function _loop(i) {
     } else {
       selectSingle[i].setAttribute('data-state', 'active');
     }
-  }); // Close when click to option
+  });
+  
+  // Close when click to option
 
   for (var j = 0; j < selectSingle_labels.length; j++) {
     selectSingle_labels[j].addEventListener('click', function (evt) {

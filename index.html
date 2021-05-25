@@ -21,7 +21,7 @@
             <button class="thanks__button _thanks-closer">Return to the GLOE</button>
         </div>
     </div>
-    <div class="popup-plan _popup-plan-closer">   
+    <div class="popup-plan _popup-plan-closer">
         <div class="popup-plan__main">
             <h4 class="popup-plan__title">You have chosen a <span id="planName">Premium</span> plan for <span id="switcherValue">Educational Establishments</span></h4>
             <button class="popup-plan__close _popup-plan-closer">
@@ -46,10 +46,10 @@
                     <div class="popup-plan__item">
                         <p class="popup-plan__content popup-plan__content-mobile">Indicate the type of your business</p>
                         <div class="popup-plan__select" data-state="">
-                            <div class="__select__title" data-default="Type of business:">Type of business:</div>
+                            <div class="__select__title" data-default="Type of business">Type of business</div>
                             <div class="__select__content">
                               <input id="business0" class="__select__input" type="radio" name="business" value="" checked />
-                              <label for="business0" class="__select__label">Type of business:</label>
+                              <label for="business0" class="__select__label">Type of business</label>
                               <input id="business1" class="__select__input" type="radio" name="business" value="Public Library" />
                               <label for="business1" class="__select__label">Public Library</label>
                               <input id="business2" class="__select__input" type="radio" name="business" value="Online Library" />
@@ -69,11 +69,11 @@
                     </div>
                     <div class="popup-plan__item">
                         <p class="popup-plan__content popup-plan__content-mobile">Enter type of service you would like to receive</p>
-                        <div class="popup-plan__select" data-state="">
-                            <div class="__select__title" data-default="Type of services:">Type of services:</div>
-                            <div class="__select__content">
+                        <div class="popup-plan__select" id="servicesSelect" data-state="">
+                            <div class="__select__title" id="servicesSelectTitle" data-default="Type of services">Type of services</div>
+                            <div class="__select__content" id="servicesSelectContent">
                               <input id="services0" class="__select__input" type="radio" name="services" value="" checked />
-                              <label for="services0" class="__select__label">Type of services:</label>
+                              <label for="services0" class="__select__label">Type of services</label>
                               <input id="services1" class="__select__input" type="radio" name="services" value="Helping with scientific matter search" />
                               <label for="services1" class="__select__label">Helping with scientific matter search</label>
                               <input id="services2" class="__select__input" type="radio" name="services" value="Establishing and supporting communities" />
@@ -96,7 +96,7 @@
     <header class="header">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <a href="#">
+                <a href="index.html">
                     <picture>
                         <source srcset="img/logo_desktop.svg" type="image/svg+xml" media="(min-width: 768px)">
                         <img src="img/logo_mobile.svg" alt="GLOE">
@@ -149,25 +149,25 @@
                         </article>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <article class="info__item _toReaders">
+                        <article class="info__item _toBookStories">
                             <img class="info__icon" src="img/info/icon3.svg" alt="icon">
+                            <div class="info__content">
+                                <h5>For Book Stores</h5>
+                                <p>Offering personal advice to your buyers</p>
+                                <p>Offering a keyword-based book search</p>
+                                <p>Offering an online platform</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <article class="info__item _toReaders">
+                            <img class="info__icon" src="img/info/icon4.svg" alt="icon">
                             <div class="info__content">
                                 <h5>For Readers</h5>
                                 <p>Digitalizing your library</p>
                                 <p>Uploading your books to the cloud</p>
                                 <p>Preserving your offline library</p>
                                 <p>Making personal reading advice for you</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <article class="info__item _toBookStories">
-                            <img class="info__icon" src="img/info/icon4.svg" alt="icon">
-                            <div class="info__content">
-                                <h5>For Book Stores </h5>
-                                <p>Offering personal advice to your buyers</p>
-                                <p>Offering a keyword-based book search</p>
-                                <p>Offering an online platform</p>
                             </div>
                         </article>
                     </div>
@@ -226,7 +226,7 @@
                                         </svg>
                                     </label>
                                 </button>
-                                <p>from <strong>$290/month</strong> for premium account</p>
+                                <p>from <strong>$79/month</strong> for premium account</p>
                             </div>
                         </div>
                     </div>
@@ -275,7 +275,7 @@
                                         </svg>
                                     </label>
                                 </button>
-                                <p>from <strong>$290/month</strong> for premium account</p>
+                                <p>from <strong>$79/month</strong> for premium account</p>
                             </div>
                         </div>
                     </div>
@@ -322,7 +322,7 @@
                                         </svg>
                                     </label>
                                 </button>
-                                <p>from <strong>$290/month</strong> for premium account</p>
+                                <p>from <strong>$79/month</strong> for premium account</p>
                             </div>
                         </div>
                     </div>
@@ -376,7 +376,7 @@
                                         </svg>
                                     </label>
                                 </button>
-                                <p>from <strong>$290/month</strong> for premium account</p>
+                                <p>from <strong>$79/month</strong> for premium account</p>
                             </div>
                         </div>
                     </div>
@@ -397,8 +397,7 @@
                             <label for="bookStories">for Book Stores</label>
                         </div>
                         <div class="plan__switch">
-                            <input type="radio" name="plan" value="Educational Establishments"
-                                   id="educationalEstablishments">
+                            <input type="radio" name="plan" value="Educational Establishments" id="educationalEstablishments">
                             <label for="educationalEstablishments">for Educational Establishments</label>
                         </div>
                         <div class="plan__switch">
@@ -525,24 +524,6 @@
                             <p class="item__content">Premium Support</p>
                             <button class="item__submit _popup-plan-opener" data-title="Enterprise" type="submit">Get Started</button>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="message">
-            <div class="container">
-                <div class="row">
-                    <div class="col-8 offset-2 col-lg-6 offset-lg-3">
-                        <h4 class="message__title">Is it interesting for you?</h4>
-                        <form action="#" class="form _form">
-                            <div class="form__block">
-                                <input class="_req" type="email" placeholder="Email Address" name="email" required>
-                            </div>
-                            <div class="form__block">
-                                <textarea class="_req" placeholder="Your Message" name="message" required></textarea>
-                            </div>
-                            <button type="submit" class="form__submit"><span>Let’s Talk</span></button>
-                        </form>
                     </div>
                 </div>
             </div>
