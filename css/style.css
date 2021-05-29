@@ -1146,12 +1146,11 @@ margin-top: 30px;
   font-family: Quattrocento Sans;
   font-style: normal;
   font-weight: bold;
-  margin-bottom: 12px;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
   max-width: 260px;
-  margin: 0 auto;
+  margin: 0 auto 12px;
 }
 @media screen and ( min-width: 992px ) {
   .popup-plan__title{
