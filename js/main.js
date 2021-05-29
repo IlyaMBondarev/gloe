@@ -292,6 +292,12 @@ var _loop11 = function _loop(i) {
       selectSingle[i].setAttribute('data-state', '');
     });
   }
+
+  window.addEventListener('click', function(event) {
+    if (event.target !== selectSingle[i] && !(selectSingle[i].contains(event.target))) {
+      selectSingle[i].setAttribute('data-state', '');
+    }
+  })
 };
 
 for (var i = 0; i < selectSingle.length; i++) {

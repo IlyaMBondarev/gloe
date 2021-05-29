@@ -65,7 +65,11 @@ img {
 
 img, svg {
   -webkit-user-select: none;
-          user-select: none;
+  user-select: none;
+}
+
+source {
+  display: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -406,6 +410,8 @@ body {
   .info__subtitle {
     font-size: 18px;
     line-height: 30px;
+    max-width: 700px;
+    margin: 0 auto;
   }
 }
 .info__items {
@@ -1104,10 +1110,15 @@ margin-top: 30px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 16px;
-  width: 400px;
-  max-width: 90%;
-  max-height: 90%;
+  width: 100%;
+  height: 100%;
   overflow-y: auto;
+}
+@media screen and ( min-width: 560px ) {
+  .popup-plan__main{
+    width: 400px;
+    height: auto;
+  }
 }
 @media screen and ( min-width: 992px ) {
   .popup-plan__main{
@@ -1117,10 +1128,15 @@ margin-top: 30px;
 }
 .popup-plan__close{
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 15px;
+  right: 15px;
   background-color: transparent;
-  display: none;
+}
+@media screen and ( min-width: 992px ) {
+  .popup-plan__close{
+    top: 25px;
+    right: 25px;
+  }
 }
 .popup-plan__close:hover svg *{
   fill: #357ABD;
@@ -1133,6 +1149,7 @@ margin-top: 30px;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
+  padding: 0 20px;
 }
 @media screen and ( min-width: 992px ) {
   .popup-plan__title{
@@ -1140,9 +1157,6 @@ margin-top: 30px;
     font-size: 28px;
     line-height: 42px;
     text-align: left;
-  }
-  .popup-plan__close{
-    display: block;
   }
 }
 .popup-plan__content{
@@ -1248,13 +1262,13 @@ margin-top: 30px;
 .__select__title::before {
   content: url('../img/icons/select_arrow.svg');
   position: absolute;
-  top: 8px;
+  top: 9px;
   right: 12px;
   display: block;
 }
 @media screen and ( min-width: 992px ) {
   .__select__title::before {
-    top: 14px;
+    top: 16px;
     right: 16px;
   }
 }
@@ -1264,12 +1278,12 @@ margin-top: 30px;
 .__select__content {
   position: absolute;
   top: calc(100% - 2px);
-  left: 3px;
+  left: 0;
   padding: 0 0 10px 0;
   max-height: 250px;
   overflow: auto;
 
-  width: calc(100% - 6px);
+  width: 100%;
 
   background-color: #ffffff;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
@@ -1283,6 +1297,18 @@ margin-top: 30px;
 
   opacity: 0;
   z-index: 8;
+
+  scrollbar-width: 4px;
+  scrollbar-color: #D0D0D0;
+}
+.__select__content::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+.__select__content::-webkit-scrollbar-thumb {
+  width: 4px;
+  border-radius: 4px;
+  background-color: #D0D0D0;
 }
 .__select__input {
   display: none;
